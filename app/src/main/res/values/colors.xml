@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="main_black">#212121</color>
+    <color name="lightest_gray">#E6E8EB</color>
+    <color name="light_gray_mine">D4D4D4</color>
+    <color name="main_background_gray">FAFAFA</color>
+    <color name="yp_light_gray">#E6E8EB</color>
+    <color name="yp_text_gray">#AEAFB4</color>
+    <color name="yp_blue_light">#9FBBF3</color>
+    <color name="icons_tint_color">#AEAFB4</color>
+    <color name="clear_button_color">#AEAFB4</color>
+</resources>

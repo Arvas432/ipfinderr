@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ipfinderr</string>
+    <string name="defaultip">192.168.1.1</string>
+    <string name="show_on_map">Показать\nна карте</string>
+    <string name="additional_info">Полные\nданные</string>
+    <string name="longitude">Долгота</string>
+    <string name="latitude">Широта</string>
+    <string name="subnet">Подсеть</string>
+    <string name="provider">Провайдер</string>
+    <string name="city">Город</string>
+    <string name="country">Страна</string>
+</resources>
