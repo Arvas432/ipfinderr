@@ -13,6 +13,7 @@
         app:layout_constraintGuide_begin="56dp"
         android:orientation="horizontal"
         />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="0dp"
         android:id="@+id/search_field_et"
@@ -22,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="@dimen/margin_12dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="56dp"
         android:paddingHorizontal="10dp"
@@ -39,12 +40,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="История поиска"
+        tools:text="История поиска"
         android:fontFamily="@font/futura_medium"
         app:layout_constraintTop_toBottomOf="@id/search_field_gl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/margin_12dp"
         android:backgroundTint="@color/light_gray_mine"
         app:cornerradius="54dp"/>
 
@@ -53,7 +54,7 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="@dimen/margin_12dp"
         android:background="null"
         android:src="@drawable/settings_icon"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +75,7 @@
         android:id="@+id/country_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:text="Russian Federation"
+        tools:text="Russian Federation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="@font/futura_medium"
@@ -89,9 +90,9 @@
         android:layout_width="match_parent"
         android:layout_marginBottom="4dp"
         android:layout_height="32dp"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="@dimen/margin_14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="@dimen/margin_14dp"
         app:layout_constraintBottom_toTopOf="@id/city_layout">
         <TextView
             android:textSize="15sp"
@@ -103,7 +104,7 @@
             android:layout_width="105dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="@dimen/margin_14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/header_2"
             />
@@ -112,7 +113,7 @@
             android:textSize="15sp"
             android:id="@+id/header_end5"
             android:layout_width="0dp"
-            android:text="Россия"
+            tools:text="Россия"
             android:textColor="@color/main_black"
             android:paddingRight="10dp"
             android:fontFamily="@font/futura_medium"
@@ -131,9 +132,9 @@
         android:layout_width="match_parent"
         android:layout_marginBottom="4dp"
         android:layout_height="32dp"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="@dimen/margin_14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="@dimen/margin_14dp"
         app:layout_constraintBottom_toTopOf="@id/provider_layout">
         <TextView
             android:textSize="15sp"
@@ -145,7 +146,7 @@
             android:layout_width="105dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="@dimen/margin_14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/header_2"
             />
@@ -154,7 +155,7 @@
             android:textSize="15sp"
             android:id="@+id/header_end4"
             android:layout_width="0dp"
-            android:text="Москва"
+            tools:text="Москва"
             android:textColor="@color/main_black"
             android:paddingRight="10dp"
             android:fontFamily="@font/futura_medium"
@@ -173,9 +174,9 @@
         android:layout_width="match_parent"
         android:layout_marginBottom="4dp"
         android:layout_height="32dp"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="@dimen/margin_14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="@dimen/margin_14dp"
         app:layout_constraintBottom_toTopOf="@id/subnet_layout">
         <TextView
             android:textSize="15sp"
@@ -187,7 +188,7 @@
             android:layout_width="105dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="@dimen/margin_14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/header_2"
             />
@@ -196,7 +197,7 @@
             android:textSize="15sp"
             android:id="@+id/header_end3"
             android:layout_width="0dp"
-            android:text="MGTS"
+            tools:text="MGTS"
             android:textColor="@color/main_black"
             android:paddingRight="10dp"
             android:fontFamily="@font/futura_medium"
@@ -215,9 +216,9 @@
         android:layout_width="match_parent"
         android:layout_marginBottom="4dp"
         android:layout_height="32dp"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="@dimen/margin_14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="@dimen/margin_14dp"
         app:layout_constraintBottom_toTopOf="@id/longitude_layout">
         <TextView
             android:textSize="15sp"
@@ -229,7 +230,7 @@
             android:layout_width="105dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="@dimen/margin_14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/header_2"
             />
@@ -238,7 +239,7 @@
             android:textSize="15sp"
             android:id="@+id/header_end2"
             android:layout_width="0dp"
-            android:text="192.168.1.0/22"
+            tools:text="192.168.1.0/22"
             android:textColor="@color/main_black"
             android:paddingRight="10dp"
             android:fontFamily="@font/futura_medium"
@@ -259,7 +260,7 @@
         android:layout_height="32dp"
         android:layout_marginStart="14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="@dimen/margin_14dp"
         app:layout_constraintBottom_toTopOf="@id/latitude_layout">
         <TextView
             android:textSize="15sp"
@@ -271,7 +272,7 @@
             android:layout_width="105dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="@dimen/margin_14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/header_2"
             />
@@ -280,7 +281,7 @@
             android:textSize="15sp"
             android:id="@+id/header_end1"
             android:layout_width="0dp"
-            android:text="77.245233"
+            tools:text="77.245233"
             android:textColor="@color/main_black"
             android:paddingRight="10dp"
             android:fontFamily="@font/futura_medium"
@@ -299,9 +300,9 @@
         android:layout_width="match_parent"
         android:layout_marginBottom="14dp"
         android:layout_height="32dp"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="@dimen/margin_14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="@dimen/margin_14dp"
         app:layout_constraintBottom_toTopOf="@id/map_button">
         <TextView
             android:textSize="15sp"
@@ -313,7 +314,7 @@
             android:layout_width="105dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="@dimen/margin_14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/header_2"
             />
@@ -322,7 +323,7 @@
             android:textSize="15sp"
             android:id="@+id/header_end"
             android:layout_width="0dp"
-            android:text="32.234232"
+            tools:text="32.234232"
             android:textColor="@color/main_black"
             android:paddingRight="10dp"
             android:fontFamily="@font/futura_medium"
@@ -342,8 +343,8 @@
         android:layout_width="0dp"
         android:layout_marginEnd="3dp"
         android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_24dp"
         android:background="@drawable/main_button_background"
         app:flow_horizontalBias="0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -374,13 +375,13 @@
         android:layout_width="0dp"
         android:layout_height="100dp"
         app:layout_goneMarginStart="3dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="@dimen/margin_24dp"
         app:layout_constraintStart_toEndOf="@id/map_button"
         android:background="@drawable/main_button_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="16dp">
+        android:layout_marginEnd="@dimen/margin_16dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

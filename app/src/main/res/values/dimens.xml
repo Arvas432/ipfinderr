@@ -12,4 +12,9 @@
     <dimen name="player_track_image_rounding">8dp</dimen>
     <dimen name="player_large_margin">24dp</dimen>
     <dimen name="player_medium_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_14dp">14dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
 </resources>
