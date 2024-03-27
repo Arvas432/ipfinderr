@@ -15,6 +15,9 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="share_app">Поделиться приложением</string>
+    <string name="message_support">Написать в поддержку</string>
+    <string name="terms_of_service">Пользовательское соглашение</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -52,4 +55,16 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="currency">Валюта</string>
+    <string name="local_time">Мест. время</string>
+    <string name="zip_code">Почт. индекс</string>
+    <string name="region">Регион</string>
+    <string name="country_code">Код страны</string>
+    <string name="local_country_name">Страна мест.</string>
+    <string name="settings">Настройки</string>
+    <string name="dark_theme">Темная тема</string>
+    <string name="search_history">История поиска</string>
+    <string name="search_request_history">История запросов</string>
+    <string name="clear_history">Очистить историю</string>
+    <string name="map">Карта</string>
 </resources>

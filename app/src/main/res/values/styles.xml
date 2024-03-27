@@ -17,5 +17,57 @@
         <item name="android:maxLines">1</item>
         <item name="android:singleLine">true</item>
     </style>
+    <style name="InfoElementStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_14dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_14dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="HeaderStartStyle">
+        <item name="android:layout_width">105dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginEnd">@dimen/margin_14dp</item>
+        <item name="android:background">@drawable/header_2</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/lightest_gray</item>
+        <item name="android:fontFamily">@font/futura_medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="HeaderTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/lightest_gray</item>
+        <item name="android:fontFamily">@font/futura_medium</item>
+    </style>
+
+    <style name="HeaderEndStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/main_black</item>
+        <item name="android:fontFamily">@font/futura_medium</item>
+        <item name="android:gravity">end</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingVertical">7dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:background">@drawable/header</item>
+    </style>
+    <style name="HeaderEndTextStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/main_black</item>
+        <item name="android:fontFamily">@font/futura_medium</item>
+    </style>
+    <style name="settings_body">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:fontFamily">@font/futura_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/main_black</item>
+        <item name="android:lineHeight">21sp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">@dimen/medium_margin</item>
+    </style>
 
 </resources>
