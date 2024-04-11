@@ -2,6 +2,7 @@ package com.example.ipfinderr
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -15,6 +16,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+        val backBtn = findViewById<ImageButton>(R.id.back_btn)
+        backBtn.setOnClickListener {
+            finish()
+        }
     }
 
     override fun onMapReady(p0: GoogleMap) {

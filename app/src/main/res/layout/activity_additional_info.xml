@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_constraintVertical_chainStyle="packed"
-    android:background="@color/main_background_gray"
+    android:background="?attr/colorPrimary"
     tools:context=".AdditionalInfoActivity">
     <LinearLayout
         app:layout_constraintStart_toStartOf="parent"
@@ -25,9 +25,8 @@
         android:layout_width= "44dp"
         android:layout_height="44dp"
         android:layout_margin="@dimen/small_margin"
-        android:background="@color/main_background_gray"
-        android:src="@drawable/back_icon"
-        app:tint="@color/main_black" />
+        android:background="?attr/colorPrimary"
+        android:src="@drawable/back_icon" />
     <TextView
         android:textSize="25sp"
         android:fontFamily="@font/futura_medium"
@@ -36,6 +35,7 @@
         android:gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
+        android:textColor="?attr/colorOnPrimary"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp" />
         <ImageView

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/main_background_gray"
+    android:background="?attr/colorPrimary"
     style="@style/CardView">
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
@@ -14,21 +14,36 @@
         app:layout_constraintGuide_begin="56dp"
         android:orientation="horizontal"
         />
-
-    <androidx.appcompat.widget.AppCompatEditText
+    <FrameLayout
         android:layout_width="0dp"
-        android:id="@+id/search_field_et"
         android:layout_height="36dp"
-        android:lineHeight="26sp"
-        android:hint="@string/defaultip"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"
         android:layout_marginStart="@dimen/margin_12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="56dp"
-        android:paddingHorizontal="10dp"
-        style="@style/search_text_style" />
+        android:layout_marginEnd="56dp">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:id="@+id/search_field_et"
+            android:layout_height="36dp"
+            android:paddingHorizontal="10dp"
+            android:lineHeight="26sp"
+            android:hint="@string/defaultip"
+            style="@style/search_text_style" />
+        <ImageView
+            android:id="@+id/clear_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|end"
+            android:src="@drawable/clear_icon"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:tint="@color/clear_button_color" />
+    </FrameLayout>
+
+
     
     <ImageView
         android:id="@+id/world_map_layout"
@@ -40,10 +55,12 @@
         app:layout_constraintBottom_toTopOf="@id/country_layout"
         app:layout_constraintTop_toBottomOf="@id/search_field_gl"/>
     <Button
+        android:id="@+id/search_history_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_history"
         android:fontFamily="@font/futura_medium"
+        android:textColor="?attr/colorPrimary"
         app:layout_constraintTop_toBottomOf="@id/search_field_gl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +73,7 @@
         android:layout_height="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="@dimen/margin_12dp"
-        android:background="@color/main_background_gray"
+        android:background="?attr/colorPrimary"
         android:src="@drawable/settings_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
@@ -241,6 +258,7 @@
             android:text="@string/show_on_map"
             android:fontFamily="@font/futura_medium"
             android:textSize="20sp"
+            android:textColor="?attr/colorPrimary"
             android:layout_marginStart="13dp"/>
 
         <ImageView
@@ -272,6 +290,7 @@
             android:text="@string/additional_info"
             android:fontFamily="@font/futura_medium"
             android:textSize="20sp"
+            android:textColor="?attr/colorPrimary"
             android:layout_marginStart="13dp"/>
         <ImageView
             android:layout_width="wrap_content"

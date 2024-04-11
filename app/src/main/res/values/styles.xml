@@ -7,7 +7,6 @@
         <item name="fontFamily">@font/futura_medium</item>
         <item name="tint">@color/clear_button_color</item>
         <item name="android:textColor">@color/main_black</item>
-        <item name="android:layout_height">36dp</item>
         <item name="android:background">@drawable/search_field_background</item>
         <item name="android:drawableStart">@drawable/search_icon_small</item>
         <item name="android:drawablePadding">10dp</item>
@@ -45,7 +44,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/main_black</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
         <item name="android:fontFamily">@font/futura_medium</item>
         <item name="android:gravity">end</item>
         <item name="android:paddingRight">10dp</item>
@@ -64,7 +63,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:fontFamily">@font/futura_medium</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/main_black</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:lineHeight">21sp</item>
         <item name="android:paddingStart">16dp</item>
         <item name="android:paddingEnd">@dimen/medium_margin</item>

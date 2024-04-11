@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="?attr/colorPrimary"
     tools:context=".SearchHistoryActivity">
     <LinearLayout
         app:layout_constraintStart_toStartOf="parent"
@@ -24,11 +25,11 @@
             android:layout_width= "44dp"
             android:layout_height="44dp"
             android:layout_margin="@dimen/small_margin"
-            android:background="@color/main_background_gray"
-            android:src="@drawable/back_icon"
-            app:tint="@color/main_black" />
+            android:background="?attr/colorPrimary"
+            android:src="@drawable/back_icon" />
         <TextView
             android:textSize="25sp"
+            android:textColor="?attr/colorOnPrimary"
             android:fontFamily="@font/futura_medium"
             android:layout_marginStart="@dimen/medium_margin"
             android:text="@string/search_request_history"
@@ -46,6 +47,7 @@
         android:fontFamily="@font/futura_medium"
         android:layout_marginTop="@dimen/margin_12dp"
         android:layout_marginBottom="@dimen/margin_12dp"
+        android:textColor="?attr/colorPrimary"
         android:backgroundTint="@color/light_gray_mine" />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

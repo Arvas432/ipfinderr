@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:background="@color/lightest_gray"
+    android:background="?attr/colorSecondary"
+    android:layout_marginHorizontal="4dp"
     android:layout_marginVertical="3dp"
     android:layout_height="wrap_content">
     <TextView
@@ -15,6 +16,7 @@
         android:fontFamily="@font/futura_medium"
         android:textSize="20sp"
         android:lineHeight="21sp"
+        android:textColor="?attr/colorOnSecondary"
         android:layout_marginStart="6dp"
         tools:text="192.168.1.1/25"/>
     <ImageView

@@ -11,4 +11,6 @@
     <color name="yp_blue_light">#9FBBF3</color>
     <color name="icons_tint_color">#AEAFB4</color>
     <color name="clear_button_color">#AEAFB4</color>
+    <color name="main_blue">#3B9EBF</color>
+    <color name="darkest_gray">#48494B</color>
 </resources>
