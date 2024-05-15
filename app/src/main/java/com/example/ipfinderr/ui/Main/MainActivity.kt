@@ -22,7 +22,7 @@ import com.example.ipfinderr.databinding.ActivityMainBinding
 import com.example.ipfinderr.domain.IpResult
 import com.example.ipfinderr.ui.additionalData.AdditionalInfoActivity
 import com.example.ipfinderr.ui.MapActivity
-import com.example.ipfinderr.ui.SettingsActivity
+import com.example.ipfinderr.ui.settings.SettingsActivity
 import com.example.ipfinderr.ui.searchHistory.SearchHistoryActivity
 import com.google.gson.Gson
 import org.koin.androidx.viewmodel.ext.android.viewModel
