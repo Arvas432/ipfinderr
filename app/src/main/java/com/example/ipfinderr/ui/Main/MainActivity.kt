@@ -120,6 +120,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setContentScreenState(ipResult: IpResult) {
         curIp = ipResult
+        binding.networkErrorView.isVisible = false
+        binding.noResultsView.isVisible = false
         binding.progressBar.isVisible = false
         binding.searchHistoryBtn.isVisible = true
         binding.headerEnd5.text = ipResult.country
@@ -136,19 +138,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setEmptyResultsScreenState() {
-
+        binding.progressBar.isVisible = false
+        binding.searchHistoryBtn.isVisible = false
+        binding.networkErrorView.isVisible = false
+        binding.noResultsView.isVisible = true
     }
 
     private fun setNetworkErrorScreenState() {
-
+        binding.progressBar.isVisible = false
+        binding.searchHistoryBtn.isVisible = false
+        binding.networkErrorView.isVisible = true
+        binding.noResultsView.isVisible = false
     }
 
     private fun setLoadingScreenState() {
         binding.searchHistoryBtn.isVisible = false
         binding.progressBar.isVisible = true
+        binding.networkErrorView.isVisible = false
+        binding.noResultsView.isVisible = false
     }
 
     private fun setDefaultScreenState() {
+        binding.networkErrorView.isVisible = false
+        binding.noResultsView.isVisible = false
         binding.searchHistoryBtn.isVisible = true
         binding.progressBar.isVisible = false
     }

@@ -35,4 +35,6 @@
     <string name="email_contents">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="terms_of_service_link">https://yandex.ru/legal/practicum_offer/</string>
     <string name="refresh">Обновить</string>
+    <string name="no_results">Нет результатов</string>
+    <string name="network_error">Ошибка сети</string>
 </resources>

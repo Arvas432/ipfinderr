@@ -31,23 +31,6 @@ class MainActivityViewModel(private val ipInteractor: IpInteractor, private val 
     }
     fun getSearchData() = searchData
     fun getScreenStateLiveData(): LiveData<MainState> = screenStateLiveData
-
-//    fun clearHistory(){
-//        searchHistoryInteractor.clear()
-//        renderState(SearchState.Default)
-//    }
-//    fun showHistory(){
-//        handler.removeCallbacksAndMessages(null)
-//        val history = searchHistoryInteractor.read()
-//        if(history.isNotEmpty()){
-//            renderState(SearchState.SearchHistory(history))
-//        }else{
-//            renderState(SearchState.Default)
-//        }
-//    }
-//    fun writeToHistory(input: Track){
-//        searchHistoryInteractor.write(input)
-//    }
     fun immediateSearch(){
         handler.removeCallbacks(searchRunnable, SEARCH_RUNNABLE_TOKEN)
         ipFindSearch(searchData)

@@ -42,9 +42,6 @@
             tools:visibility="visible"
             app:tint="@color/clear_button_color" />
     </FrameLayout>
-
-
-    
     <ImageView
         android:id="@+id/world_map_layout"
         android:layout_width="0dp"
@@ -75,6 +72,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:indeterminateTint="@color/main_blue"
         android:layout_marginTop="@dimen/margin_14dp"/>
+    <TextView
+        android:visibility="gone"
+        android:background="@drawable/rounded_backround"
+        android:id="@+id/no_results_view"
+        android:layout_width="150dp"
+        android:height="40dp"
+        app:cornerRadius="53dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/no_results"
+        android:fontFamily="@font/futura_medium"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintTop_toBottomOf="@id/search_field_gl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_12dp"
+         />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/network_error_view"
+        android:layout_width="150dp"
+        android:height="40dp"
+        app:cornerRadius="53dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/network_error"
+        android:background="@drawable/rounded_backround"
+        android:fontFamily="@font/futura_medium"
+        android:textColor="?attr/colorOnPrimary"
+        app:layout_constraintTop_toBottomOf="@id/search_field_gl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_12dp" />
 
     <ImageButton
         android:id="@+id/settings_button"
@@ -89,7 +119,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:src="@drawable/flag"
+        android:src="@drawable/placeholder"
         android:id="@+id/flag"
         android:layout_width="150dp"
         android:layout_height="100dp"
