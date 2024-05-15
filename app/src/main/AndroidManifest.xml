@@ -30,7 +30,7 @@
             android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".ui.MapActivity"
+            android:name=".ui.map.MapActivity"
             android:exported="false" />
         <activity
             android:name=".ui.searchHistory.SearchHistoryActivity"

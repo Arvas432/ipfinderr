@@ -15,13 +15,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.ActivityMainBinding
 import com.example.ipfinderr.domain.IpResult
 import com.example.ipfinderr.ui.additionalData.AdditionalInfoActivity
-import com.example.ipfinderr.ui.MapActivity
+import com.example.ipfinderr.ui.map.MapActivity
 import com.example.ipfinderr.ui.settings.SettingsActivity
 import com.example.ipfinderr.ui.searchHistory.SearchHistoryActivity
 import com.google.gson.Gson
@@ -53,7 +54,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.getScreenStateLiveData().observe(this){
             renderState(it)
         }
-        //viewModel.searchDebounce()
         if(curIp.ip!=""){
             setContentScreenState(curIp)
         }
@@ -64,13 +64,19 @@ class MainActivity : AppCompatActivity() {
         val searchTextField = findViewById<EditText>(R.id.search_field_et)
         val clearButton = findViewById<ImageView>(R.id.clear_button)
         moreInfoButton.setOnClickListener {
-            val navigateToAdditionalInfoIntent = Intent(this, AdditionalInfoActivity::class.java)
-            navigateToAdditionalInfoIntent.putExtra(IP_ADDITIONAL_KEY, Gson().toJson(curIp))
-            startActivity(navigateToAdditionalInfoIntent)
+            if(curIp.ip!=""){
+                val navigateToAdditionalInfoIntent = Intent(this, AdditionalInfoActivity::class.java)
+                navigateToAdditionalInfoIntent.putExtra(IP_ADDITIONAL_KEY, Gson().toJson(curIp))
+                startActivity(navigateToAdditionalInfoIntent)
+            }
+
         }
         mapButton.setOnClickListener {
-            val navigateToMapIntent = Intent(this, MapActivity::class.java)
-            startActivity(navigateToMapIntent)
+            if(curIp.ip!=""){
+                val navigateToMapIntent = Intent(this, MapActivity::class.java)
+                navigateToMapIntent.putExtra(MAP_KEY, Gson().toJson(curIp))
+                startActivity(navigateToMapIntent)
+            }
         }
         settingsButton.setOnClickListener {
             val navigateToSettingsIntent = Intent(this, SettingsActivity::class.java)
@@ -106,7 +112,6 @@ class MainActivity : AppCompatActivity() {
         }
         binding.searchFieldEt.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-
                 viewModel.immediateSearch()
             }
             false
@@ -168,6 +173,7 @@ class MainActivity : AppCompatActivity() {
     }
     companion object {
         const val SEARCH_VALUE = "SEARCH_VALUE"
+        const val MAP_KEY = "MAP_KEY"
         const val SEARCH_DEF = ""
         const val IP_RESULT_KEY = "IP_RESULT_KEY"
         const val IP_ADDITIONAL_KEY = "IP_ADDITIONAL_KEY"
