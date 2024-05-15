@@ -3,6 +3,7 @@ package com.example.ipfinderr.ui.additionalData
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import com.bumptech.glide.Glide
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.ActivityAdditionalInfoBinding
 import com.example.ipfinderr.domain.IpResult
@@ -18,6 +19,12 @@ class AdditionalInfoActivity : AppCompatActivity() {
         binding.backBtn.setOnClickListener {
             finish()
         }
+        binding.ipTv.text = ipInput.ip
+        Glide.with(this)
+            .load(ipInput.imageUrl)
+            .placeholder(R.drawable.placeholder)
+            .centerInside()
+            .into(binding.flag)
         binding.headerEnd5.text = ipInput.country
         binding.headerEnd4.text = ipInput.city
         binding.headerEnd3.text = ipInput.isp

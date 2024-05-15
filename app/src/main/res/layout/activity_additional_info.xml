@@ -28,6 +28,7 @@
         android:background="?attr/colorPrimary"
         android:src="@drawable/back_icon" />
     <TextView
+        android:id="@+id/ip_tv"
         android:textSize="25sp"
         android:fontFamily="@font/futura_medium"
         android:layout_marginStart="@dimen/medium_margin"
@@ -39,6 +40,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp" />
         <ImageView
+            android:id="@+id/flag"
             android:layout_width="38dp"
             android:layout_height="26dp"
             android:src="@drawable/flag"
