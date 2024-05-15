@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_constraintVertical_chainStyle="packed"
     android:background="?attr/colorPrimary"
-    tools:context=".ui.AdditionalInfoActivity">
+    tools:context=".ui.additionalData.AdditionalInfoActivity">
     <LinearLayout
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="parent"

@@ -9,4 +9,6 @@ data class IpResult(val ip: String,
                     val countryCode: String,
                     val district: String,
                     val zipcode: String,
-                    val imageUrl: String)
+                    val imageUrl: String,
+                    val timeZone: String,
+                    val currency: String)

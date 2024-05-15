@@ -20,7 +20,7 @@ import com.bumptech.glide.Glide
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.ActivityMainBinding
 import com.example.ipfinderr.domain.IpResult
-import com.example.ipfinderr.ui.AdditionalInfoActivity
+import com.example.ipfinderr.ui.additionalData.AdditionalInfoActivity
 import com.example.ipfinderr.ui.MapActivity
 import com.example.ipfinderr.ui.SettingsActivity
 import com.example.ipfinderr.ui.searchHistory.SearchHistoryActivity
@@ -32,11 +32,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     private var searchData: String = SEARCH_DEF
     private val viewModel by viewModel<MainActivityViewModel>()
+    private lateinit var curIp: IpResult
     private lateinit var countryDataTv: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val savedIp = Gson().fromJson(intent.getStringExtra(IP_RESULT_KEY), IpResult::class.java)
+        if(intent.hasExtra(IP_RESULT_KEY)){
+            curIp = Gson().fromJson(intent.getStringExtra(IP_RESULT_KEY), IpResult::class.java)
 
+        }
+        else{
+            curIp = IpResult("", "", "", "", "", "", "", "", "","", "", "")
+        }
+        //curIp = Gson().fromJson(intent.getStringExtra(IP_RESULT_KEY), IpResult::class.java)
         binding = ActivityMainBinding.inflate(layoutInflater)
         countryDataTv = binding.headerEnd5
         setContentView(binding.root)
@@ -47,8 +54,8 @@ class MainActivity : AppCompatActivity() {
             renderState(it)
         }
         //viewModel.searchDebounce()
-        if(savedIp!=null){
-            setContentScreenState(savedIp)
+        if(curIp.ip!=""){
+            setContentScreenState(curIp)
         }
         val moreInfoButton = findViewById<FrameLayout>(R.id.additional_info_button)
         val mapButton = findViewById<FrameLayout>(R.id.map_button)
@@ -58,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         val clearButton = findViewById<ImageView>(R.id.clear_button)
         moreInfoButton.setOnClickListener {
             val navigateToAdditionalInfoIntent = Intent(this, AdditionalInfoActivity::class.java)
+            navigateToAdditionalInfoIntent.putExtra(IP_ADDITIONAL_KEY, Gson().toJson(curIp))
             startActivity(navigateToAdditionalInfoIntent)
         }
         mapButton.setOnClickListener {
@@ -106,6 +114,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setContentScreenState(ipResult: IpResult) {
+        curIp = ipResult
         binding.progressBar.isVisible = false
         binding.searchHistoryBtn.isVisible = true
         binding.headerEnd5.text = ipResult.country
@@ -161,5 +170,6 @@ class MainActivity : AppCompatActivity() {
         const val SEARCH_VALUE = "SEARCH_VALUE"
         const val SEARCH_DEF = ""
         const val IP_RESULT_KEY = "IP_RESULT_KEY"
+        const val IP_ADDITIONAL_KEY = "IP_ADDITIONAL_KEY"
     }
 }

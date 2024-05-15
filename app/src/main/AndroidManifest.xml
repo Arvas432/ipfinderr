@@ -39,7 +39,7 @@
             android:name=".ui.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.AdditionalInfoActivity"
+            android:name=".ui.additionalData.AdditionalInfoActivity"
             android:exported="false"
             android:label="@string/title_activity_additional_info"
             android:theme="@style/Theme.Ipfinderr" />

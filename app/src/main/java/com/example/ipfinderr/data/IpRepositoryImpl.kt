@@ -25,11 +25,13 @@ class IpRepositoryImpl(private val networkClient: NetworkClient): IpRepository {
                 resp.result.countryCode2?:"",
                 resp.result.district?:"",
                 resp.result.zipcode?: "",
-                resp.result.countryFlag?:""
+                resp.result.countryFlag?:"",
+                resp.result.timeZone?.name?: "",
+                resp.result.currency?.name?: ""
             )
         } else{
             Log.i("Repository", response.resultCode.toString())
-            return IpResult("", "", "", "", "", "", "", "", "", "")
+            return IpResult("", "", "", "", "", "", "", "", "", "", "", "")
         }
     }
 }

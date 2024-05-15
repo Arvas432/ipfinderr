@@ -30,6 +30,6 @@ data class IpFindDto (
     @SerializedName("organization"          ) var organization        : String?   = null,
     @SerializedName("country_emoji"         ) var countryEmoji        : String?   = null,
     @SerializedName("currency"              ) var currency            : Currency? = Currency(),
-    //@SerializedName("time_zone"             ) var timeZone            : TimeZone? = TimeZone()
+    @SerializedName("time_zone"             ) var timeZone            : TimeZone? = TimeZone()
 
 )

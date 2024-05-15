@@ -12,7 +12,7 @@ class IpInteractorImpl(private val repository: IpRepository): IpInteractor {
     override fun searchIp(expression: String, consumer: IpInteractor.IpConsumer) {
         executor.execute {
             if(expression.isNotEmpty()){
-                val emptyResult = IpResult("", "", "", "", "", "", "", "", "","")
+                val emptyResult = IpResult("", "", "", "", "", "", "", "", "","", "", "")
                 consumer.consume(IpSearchResult(emptyResult, SearchResultType.LOADING))
                 try {
                     val result = repository.searchIp(expression)
