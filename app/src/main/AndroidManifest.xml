@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -29,21 +30,21 @@
             android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".MapActivity"
+            android:name=".ui.MapActivity"
             android:exported="false" />
         <activity
-            android:name=".SearchHistoryActivity"
+            android:name=".ui.searchHistory.SearchHistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ui.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".AdditionalInfoActivity"
+            android:name=".ui.AdditionalInfoActivity"
             android:exported="false"
             android:label="@string/title_activity_additional_info"
             android:theme="@style/Theme.Ipfinderr" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.Main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

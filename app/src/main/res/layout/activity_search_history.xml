@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="?attr/colorPrimary"
-    tools:context=".SearchHistoryActivity">
+    tools:context=".ui.searchHistory.SearchHistoryActivity">
     <LinearLayout
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
@@ -40,6 +40,7 @@
             android:layout_marginBottom="12dp" />
     </LinearLayout>
     <Button
+        android:id="@+id/clear_button"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
@@ -50,6 +51,8 @@
         android:textColor="?attr/colorPrimary"
         android:backgroundTint="@color/light_gray_mine" />
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/history_rv"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/search_history_item_view"

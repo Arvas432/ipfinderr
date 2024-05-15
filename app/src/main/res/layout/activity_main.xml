@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".ui.Main.MainActivity"
     android:background="?attr/colorPrimary"
     style="@style/CardView">
     <androidx.constraintlayout.widget.Guideline
@@ -66,6 +66,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/margin_12dp"
         android:backgroundTint="@color/light_gray_mine" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/search_field_gl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:indeterminateTint="@color/main_blue"
+        android:layout_marginTop="@dimen/margin_14dp"/>
 
     <ImageButton
         android:id="@+id/settings_button"
