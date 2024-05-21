@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".ui.settings.SettingsFragment"
+    android:orientation="vertical">
+    <LinearLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/top_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginEnd="52dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:layout_marginStart="@dimen/small_margin">
+        <TextView
+            android:textSize="25sp"
+            android:fontFamily="@font/futura_medium"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:text="@string/settings"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp" />
+    </LinearLayout>
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/night_mode_switch"
+        android:text="@string/dark_theme"
+        android:fontFamily="@font/futura_medium"
+        app:thumbTint="@color/yp_text_gray"
+        app:trackTint="@color/light_gray_mine"
+        android:textSize="20sp"
+        android:textColor="?attr/colorOnPrimary"
+        android:lineHeight="21sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="6dp"
+        android:layout_gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"/>
+    <TextView
+        style="@style/settings_body"
+        android:id="@+id/share_button"
+        android:text="@string/share_app"
+        app:drawableEndCompat="@drawable/share_icon" />
+    <TextView
+        style="@style/settings_body"
+        android:id="@+id/tech_support_button"
+        android:text="@string/message_support"
+        app:drawableEndCompat="@drawable/tech_support" />
+    <TextView
+        style="@style/settings_body"
+        android:id="@+id/terms_of_service_button"
+        android:text="@string/terms_of_service"
+        app:drawableEndCompat="@drawable/tos_button"/>
+
+</LinearLayout>

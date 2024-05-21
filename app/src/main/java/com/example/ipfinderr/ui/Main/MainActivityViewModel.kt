@@ -14,6 +14,7 @@ import com.example.ipfinderr.domain.SearchResultType
 class MainActivityViewModel(private val ipInteractor: IpInteractor, private val searchHistoryInteractor: SearchHistoryInteractor): ViewModel() {
     private var screenStateLiveData = MutableLiveData<MainState>(MainState.Default)
     private var searchData: String = SEARCH_DEF
+    private var searchTextLiveData = MutableLiveData<String>(SEARCH_DEF)
     private var lastSearch: String = SEARCH_DEF
     private val handler = Handler(Looper.getMainLooper())
     private val searchRunnable = Runnable {
@@ -28,8 +29,9 @@ class MainActivityViewModel(private val ipInteractor: IpInteractor, private val 
     }
     fun setSearchData(input: String){
         searchData = input
+        searchTextLiveData.postValue(input)
     }
-    fun getSearchData() = searchData
+    fun getSearchTextLiveData(): LiveData<String> = searchTextLiveData
     fun getScreenStateLiveData(): LiveData<MainState> = screenStateLiveData
     fun immediateSearch(){
         handler.removeCallbacks(searchRunnable, SEARCH_RUNNABLE_TOKEN)
