@@ -11,6 +11,7 @@ class RootActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRootBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //хихи
         binding = ActivityRootBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_view) as NavHostFragment
