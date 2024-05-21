@@ -18,7 +18,7 @@ class SearchHistoryViewModel(private val searchHistoryInteractor: SearchHistoryI
     }
     fun clearHistory(){
         searchHistoryInteractor.clear()
-        renderState(SearchHistoryState.Default)
+        renderState(SearchHistoryState.EmptyHistory)
     }
     fun showHistory(){
         handler.removeCallbacksAndMessages(null)

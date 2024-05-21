@@ -8,9 +8,11 @@ import com.example.ipfinderr.domain.IpRepository
 class IpRepositoryImpl(private val networkClient: NetworkClient): IpRepository {
     override fun searchIp(expression: String): IpResult {
         val response = networkClient.doRequest(IPFindRequest(expression))
+        Log.i("NETWORK", response.resultCode.toString())
         if(response.resultCode == 200){
             Log.i("REPOSITORY", "IM HERE")
             val resp = (response as IPFindResponse)
+
             if(resp == null){
                 Log.i("REPOSITORY", "NULL")
             }
