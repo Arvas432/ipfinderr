@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -19,6 +20,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.ActivityMainBinding
@@ -34,7 +36,6 @@ import com.google.gson.Gson
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : BindingFragment<FragmentMainBinding>() {
-    private var searchData: String = MainActivity.SEARCH_DEF
     private val viewModel by viewModel<MainActivityViewModel>()
     private lateinit var curIp: IpResult
     private lateinit var countryDataTv: TextView
@@ -48,20 +49,16 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if(arguments!=null){
-            curIp = Gson().fromJson(requireArguments().getString(ARG_IP_RESULT), IpResult::class.java)
-
-        }
-        else{
-            curIp = IpResult("", "", "", "", "", "", "", "", "","", "", "")
+        curIp = if(arguments!=null){
+            Gson().fromJson(requireArguments().getString(IP_RESULT_KEY), IpResult::class.java)
+        } else{
+            IpResult("", "", "", "", "", "", "", "", "","", "", "")
         }
         countryDataTv = binding.headerEnd5
         viewModel.getScreenStateLiveData().observe(viewLifecycleOwner){
             renderState(it)
         }
-        viewModel.getSearchTextLiveData().observe(viewLifecycleOwner){
-            binding.searchFieldEt.setText(it)
-        }
+        binding.flag.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         if(curIp.ip!=""){
             setContentScreenState(curIp)
         }
@@ -70,24 +67,17 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
 //                val navigateToAdditionalInfoIntent = Intent(this, AdditionalInfoActivity::class.java)
 //                navigateToAdditionalInfoIntent.putExtra(MainActivity.IP_ADDITIONAL_KEY, Gson().toJson(curIp))
 //                startActivity(navigateToAdditionalInfoIntent)
+                findNavController().navigate(R.id.action_mainFragment_to_additionalInfoFragment, bundleOf(
+                    IP_RESULT_KEY to Gson().toJson(curIp)))
             }
 
         }
         binding.mapButton.setOnClickListener {
             if(curIp.ip!=""){
-//                val navigateToMapIntent = Intent(this, MapActivity::class.java)
-//                navigateToMapIntent.putExtra(MainActivity.MAP_KEY, Gson().toJson(curIp))
-//                startActivity(navigateToMapIntent)
+                findNavController().navigate(R.id.action_mainFragment_to_mapsHostFragment, bundleOf(
+                    IP_RESULT_KEY to Gson().toJson(curIp)))
             }
         }
-//        settingsButton.setOnClickListener {
-//            val navigateToSettingsIntent = Intent(this, SettingsActivity::class.java)
-//            startActivity(navigateToSettingsIntent)
-//        }
-//        searchHistoryButton.setOnClickListener {
-//            val navigateToSearchHistoryIntent = Intent(this, SearchHistoryActivity::class.java)
-//            startActivity(navigateToSearchHistoryIntent)
-//        }
         val searchFieldTextWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -104,14 +94,13 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
             override fun afterTextChanged(s: Editable?) = Unit
         }
         binding.searchFieldEt.addTextChangedListener(searchFieldTextWatcher)
-        binding.searchFieldEt.setText(searchData)
         binding.clearButton.setOnClickListener {
             requireActivity().currentFocus?.let {
                 val inputMethodManager = ContextCompat.getSystemService(requireContext(), InputMethodManager::class.java)!!
                 inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
             }
-//            binding.searchFieldEt.setText("")
             viewModel.setSearchData("")
+            binding.searchFieldEt.setText("")
         }
         binding.searchFieldEt.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -122,10 +111,10 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
     }
     private fun setContentScreenState(ipResult: IpResult) {
         curIp = ipResult
+        binding.flag.animate()
         binding.networkErrorView.isVisible = false
         binding.noResultsView.isVisible = false
         binding.progressBar.isVisible = false
-        binding.searchHistoryBtn.isVisible = true
         binding.headerEnd5.text = ipResult.country
         binding.headerEnd4.text = ipResult.city
         binding.headerEnd3.text = ipResult.isp
@@ -141,20 +130,17 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
 
     private fun setEmptyResultsScreenState() {
         binding.progressBar.isVisible = false
-        binding.searchHistoryBtn.isVisible = false
         binding.networkErrorView.isVisible = false
         binding.noResultsView.isVisible = true
     }
 
     private fun setNetworkErrorScreenState() {
         binding.progressBar.isVisible = false
-        binding.searchHistoryBtn.isVisible = false
         binding.networkErrorView.isVisible = true
         binding.noResultsView.isVisible = false
     }
 
     private fun setLoadingScreenState() {
-        binding.searchHistoryBtn.isVisible = false
         binding.progressBar.isVisible = true
         binding.networkErrorView.isVisible = false
         binding.noResultsView.isVisible = false
@@ -163,7 +149,6 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
     private fun setDefaultScreenState() {
         binding.networkErrorView.isVisible = false
         binding.noResultsView.isVisible = false
-        binding.searchHistoryBtn.isVisible = true
         binding.progressBar.isVisible = false
     }
 
@@ -184,6 +169,7 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
     }
     companion object {
         private const val ARG_IP_RESULT = "argIpResult"
+        const val IP_RESULT_KEY = "IP_RESULT_KEY"
         fun newInstance(ipResult: IpResult): MainFragment = MainFragment().apply {
             arguments = bundleOf(ARG_IP_RESULT to Gson().toJson(ipResult))
         }

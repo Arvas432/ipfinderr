@@ -15,6 +15,7 @@
         <action
             android:id="@+id/action_mainFragment_to_mapsHostFragment"
             app:destination="@id/mapsHostFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/searchHistoryFragment"
@@ -23,7 +24,12 @@
         tools:layout="@layout/fragment_search_history" >
         <action
             android:id="@+id/action_searchHistoryFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment" >
+            <argument
+                android:name="inputIp"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/settingsFragment2"

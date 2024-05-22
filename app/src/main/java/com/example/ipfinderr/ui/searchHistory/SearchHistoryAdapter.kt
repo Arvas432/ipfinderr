@@ -6,7 +6,10 @@ import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.SearchHistoryItemViewBinding
 import com.example.ipfinderr.domain.IpResult
 import com.example.ipfinderr.ui.Main.MainActivity
@@ -29,11 +32,8 @@ class SearchHistoryAdapter(private val results: List<IpResult>, private val view
         holder.itemView.setOnClickListener{
             if(clickDebounce()){
                 viewModel.writeToHistory(results[position])
-                val navigateToPlayerActivity = Intent(holder.itemView.context, MainActivity::class.java)
-                navigateToPlayerActivity.putExtra(IP_RESULT_KEY, Gson().toJson(results[position]))
-                navigateToPlayerActivity.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                Log.i("intent", results[position].ip)
-                holder.itemView.context.startActivity(navigateToPlayerActivity)
+                holder.itemView.findNavController().navigate(R.id.action_searchHistoryFragment_to_mainFragment, bundleOf(
+                    IP_RESULT_KEY to Gson().toJson(results[position])))
             }
         }
     }

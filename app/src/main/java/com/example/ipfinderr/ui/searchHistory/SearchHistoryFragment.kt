@@ -71,4 +71,9 @@ class SearchHistoryFragment : BindingFragment<FragmentSearchHistoryBinding>() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.onDestroy()
+    }
+
 }
