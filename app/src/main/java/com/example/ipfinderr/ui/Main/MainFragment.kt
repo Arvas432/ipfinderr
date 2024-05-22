@@ -162,7 +162,7 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
         }
 
     }
-
+//хаха
     override fun onDestroy() {
         super.onDestroy()
         viewModel.onDestroy()
