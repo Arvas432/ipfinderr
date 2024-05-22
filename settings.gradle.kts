@@ -14,6 +14,7 @@ dependencyResolutionManagement {
 }
 
 
+
 rootProject.name = "ipfinderr"
 include(":app")
  

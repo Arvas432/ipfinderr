@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.FragmentAdditionalInfoBinding
@@ -26,9 +27,9 @@ class AdditionalInfoFragment : BindingFragment<FragmentAdditionalInfoBinding>() 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val ipInput = Gson().fromJson<IpResult>(requireArguments().getString(ARG_IP_RESULT),IpResult::class.java)
+        val ipInput = Gson().fromJson<IpResult>(requireArguments().getString(IP_RESULT_KEY),IpResult::class.java)
         binding.backBtn.setOnClickListener {
-//            finish()
+            findNavController().navigateUp()
         }
         binding.ipTv.text = ipInput.ip
         Glide.with(this)
@@ -52,6 +53,7 @@ class AdditionalInfoFragment : BindingFragment<FragmentAdditionalInfoBinding>() 
 
     companion object {
         private const val ARG_IP_RESULT = "argIpResult"
+        const val IP_RESULT_KEY = "IP_RESULT_KEY"
         fun newInstance(ipResult: IpResult): MainFragment = MainFragment().apply {
             arguments = bundleOf(ARG_IP_RESULT to Gson().toJson(ipResult))
         }
