@@ -1,4 +1,4 @@
-package com.example.ipfinderr.ui.searchHistory
+package com.example.ipfinderr.ui.searchHistory.adapters
 
 import android.os.Handler
 import android.os.Looper
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.SearchHistoryItemViewBinding
 import com.example.ipfinderr.domain.search.IpResult
+import com.example.ipfinderr.ui.searchHistory.viewmodel.SearchHistoryViewModel
 import com.example.ipfinderr.ui.searchHistory.viewholders.IpResultViewHolder
 import com.google.gson.Gson
 

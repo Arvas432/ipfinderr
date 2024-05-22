@@ -1,4 +1,4 @@
-package com.example.ipfinderr.ui.Main
+package com.example.ipfinderr.ui.Main.viewmodel
 
 import android.os.Handler
 import android.os.Looper
@@ -10,6 +10,7 @@ import com.example.ipfinderr.domain.search.IpInteractor
 import com.example.ipfinderr.domain.search.IpSearchResult
 import com.example.ipfinderr.domain.search.SearchHistoryInteractor
 import com.example.ipfinderr.domain.search.SearchResultType
+import com.example.ipfinderr.ui.Main.state.MainState
 
 class MainScreenViewModel(private val ipInteractor: IpInteractor, private val searchHistoryInteractor: SearchHistoryInteractor): ViewModel() {
     private var screenStateLiveData = MutableLiveData<MainState>(MainState.Default)

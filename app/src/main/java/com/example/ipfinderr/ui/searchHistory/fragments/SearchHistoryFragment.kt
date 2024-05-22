@@ -9,9 +9,9 @@ import androidx.core.view.isVisible
 import com.example.ipfinderr.databinding.FragmentSearchHistoryBinding
 import com.example.ipfinderr.domain.search.IpResult
 import com.example.ipfinderr.ui.BindingFragment
-import com.example.ipfinderr.ui.searchHistory.SearchHistoryAdapter
-import com.example.ipfinderr.ui.searchHistory.SearchHistoryState
-import com.example.ipfinderr.ui.searchHistory.SearchHistoryViewModel
+import com.example.ipfinderr.ui.searchHistory.adapters.SearchHistoryAdapter
+import com.example.ipfinderr.ui.searchHistory.state.SearchHistoryState
+import com.example.ipfinderr.ui.searchHistory.viewmodel.SearchHistoryViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchHistoryFragment : BindingFragment<FragmentSearchHistoryBinding>() {

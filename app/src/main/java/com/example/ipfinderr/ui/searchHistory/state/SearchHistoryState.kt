@@ -1,4 +1,4 @@
-package com.example.ipfinderr.ui.searchHistory
+package com.example.ipfinderr.ui.searchHistory.state
 
 import com.example.ipfinderr.domain.search.IpResult
 

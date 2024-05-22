@@ -1,4 +1,4 @@
-package com.example.ipfinderr.ui.searchHistory
+package com.example.ipfinderr.ui.searchHistory.viewmodel
 
 import android.os.Handler
 import android.os.Looper
@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.ipfinderr.domain.search.IpResult
 import com.example.ipfinderr.domain.search.SearchHistoryInteractor
+import com.example.ipfinderr.ui.searchHistory.state.SearchHistoryState
 
 class SearchHistoryViewModel(private val searchHistoryInteractor: SearchHistoryInteractor):ViewModel() {
     private var screenStateLiveData = MutableLiveData<SearchHistoryState>(SearchHistoryState.Default)

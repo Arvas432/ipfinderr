@@ -11,7 +11,7 @@ import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.FragmentAdditionalInfoBinding
 import com.example.ipfinderr.domain.search.IpResult
 import com.example.ipfinderr.ui.BindingFragment
-import com.example.ipfinderr.ui.Main.MainFragment
+import com.example.ipfinderr.ui.Main.fragment.MainFragment
 import com.google.gson.Gson
 
 class AdditionalInfoFragment : BindingFragment<FragmentAdditionalInfoBinding>() {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Main.MainFragment"
+    tools:context=".ui.Main.fragment.MainFragment"
     android:background="?attr/colorPrimary"
     style="@style/CardView">
     <androidx.constraintlayout.widget.Guideline
@@ -97,8 +97,8 @@
     <ImageView
         android:src="@drawable/placeholder"
         android:id="@+id/flag"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="225dp"
+        android:layout_height="150dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/country_layout"

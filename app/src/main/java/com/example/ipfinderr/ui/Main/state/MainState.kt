@@ -1,4 +1,4 @@
-package com.example.ipfinderr.ui.Main
+package com.example.ipfinderr.ui.Main.state
 
 import com.example.ipfinderr.domain.search.IpResult
 

@@ -1,15 +1,16 @@
-package com.example.ipfinderr.ui.settings
+package com.example.ipfinderr.ui.settings.fragment
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.FragmentSettingsBinding
 import com.example.ipfinderr.ui.BindingFragment
+import com.example.ipfinderr.ui.settings.viewmodel.SettingsViewModel
+import com.example.ipfinderr.ui.settings.state.SettingsState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SettingsFragment : BindingFragment<FragmentSettingsBinding>() {

@@ -1,9 +1,10 @@
-package com.example.ipfinderr.ui.settings
+package com.example.ipfinderr.ui.settings.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.ipfinderr.domain.settings.SettingsInteractor
+import com.example.ipfinderr.ui.settings.state.SettingsState
 import com.example.playlistmaker.domain.settings.model.ThemeSettings
 
 class SettingsViewModel(

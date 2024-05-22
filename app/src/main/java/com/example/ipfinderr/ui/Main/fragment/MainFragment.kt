@@ -1,4 +1,4 @@
-package com.example.ipfinderr.ui.Main
+package com.example.ipfinderr.ui.Main.fragment
 
 import android.os.Bundle
 import android.text.Editable
@@ -20,6 +20,8 @@ import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.FragmentMainBinding
 import com.example.ipfinderr.domain.search.IpResult
 import com.example.ipfinderr.ui.BindingFragment
+import com.example.ipfinderr.ui.Main.viewmodel.MainScreenViewModel
+import com.example.ipfinderr.ui.Main.state.MainState
 import com.google.gson.Gson
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

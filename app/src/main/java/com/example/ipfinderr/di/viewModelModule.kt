@@ -1,8 +1,8 @@
 package com.example.ipfinderr.di
 
-import com.example.ipfinderr.ui.Main.MainScreenViewModel
-import com.example.ipfinderr.ui.searchHistory.SearchHistoryViewModel
-import com.example.ipfinderr.ui.settings.SettingsViewModel
+import com.example.ipfinderr.ui.Main.viewmodel.MainScreenViewModel
+import com.example.ipfinderr.ui.searchHistory.viewmodel.SearchHistoryViewModel
+import com.example.ipfinderr.ui.settings.viewmodel.SettingsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

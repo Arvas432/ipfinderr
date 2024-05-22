@@ -28,7 +28,7 @@ class IpRepositoryImpl(private val networkClient: NetworkClient): IpRepository {
                 resp.result.countryCode2?:"",
                 resp.result.stateProv?:"",
                 resp.result.zipcode?: "",
-                resp.result.countryFlag?:"",
+                "https://flagsapi.com/${resp.result.countryCode2?:""}/flat/64.png",
                 resp.result.timeZone?.name?: "",
                 resp.result.currency?.name?: ""
             )
