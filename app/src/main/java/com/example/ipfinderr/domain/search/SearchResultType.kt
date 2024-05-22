@@ -1,4 +1,4 @@
-package com.example.ipfinderr.domain
+package com.example.ipfinderr.domain.search
 
 enum class SearchResultType {
     LOADING,

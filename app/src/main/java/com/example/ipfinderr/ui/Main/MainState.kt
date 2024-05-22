@@ -1,6 +1,6 @@
 package com.example.ipfinderr.ui.Main
 
-import com.example.ipfinderr.domain.IpResult
+import com.example.ipfinderr.domain.search.IpResult
 
 sealed class MainState{
     object Default: MainState()

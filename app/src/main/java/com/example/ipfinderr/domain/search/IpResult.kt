@@ -1,4 +1,4 @@
-package com.example.ipfinderr.domain
+package com.example.ipfinderr.domain.search
 
 data class IpResult(val ip: String,
                     val country: String,

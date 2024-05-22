@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchHistoryFragment"
-        android:name="com.example.ipfinderr.ui.searchHistory.SearchHistoryFragment"
+        android:name="com.example.ipfinderr.ui.searchHistory.fragments.SearchHistoryFragment"
         android:label="fragment_search_history"
         tools:layout="@layout/fragment_search_history" >
         <action

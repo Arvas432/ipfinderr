@@ -1,9 +1,7 @@
 package com.example.ipfinderr.ui.searchHistory
 
-import android.content.Intent
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -11,8 +9,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.SearchHistoryItemViewBinding
-import com.example.ipfinderr.domain.IpResult
-import com.example.ipfinderr.ui.Main.MainActivity
+import com.example.ipfinderr.domain.search.IpResult
+import com.example.ipfinderr.ui.searchHistory.viewholders.IpResultViewHolder
 import com.google.gson.Gson
 
 class SearchHistoryAdapter(private val results: List<IpResult>, private val viewModel: SearchHistoryViewModel): RecyclerView.Adapter<IpResultViewHolder>() {

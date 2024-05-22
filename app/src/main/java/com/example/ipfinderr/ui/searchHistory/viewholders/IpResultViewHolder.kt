@@ -1,10 +1,10 @@
-package com.example.ipfinderr.ui.searchHistory
+package com.example.ipfinderr.ui.searchHistory.viewholders
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.SearchHistoryItemViewBinding
-import com.example.ipfinderr.domain.IpResult
+import com.example.ipfinderr.domain.search.IpResult
 
 class IpResultViewHolder(private val binding: SearchHistoryItemViewBinding): RecyclerView.ViewHolder(binding.root) {
     fun bind(model: IpResult){

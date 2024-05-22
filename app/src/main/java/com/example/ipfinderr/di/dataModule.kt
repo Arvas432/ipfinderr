@@ -1,14 +1,13 @@
 package com.example.ipfinderr.di
 
 import android.content.Context
-import android.content.SharedPreferences
 import com.example.ipfinderr.data.NetworkClient
 import com.example.ipfinderr.data.RetrofitNetworkClient
 import com.example.ipfinderr.data.localstorage.LocalIpStorageHandler
 import com.example.ipfinderr.data.localstorage.SharedPreferencesLocalIpStorageHandler
 import com.example.ipfinderr.data.settings.ThemeSwitcher
 import com.example.ipfinderr.data.settings.ThemeSwitcherImpl
-import com.example.ipfinderr.domain.IpFindApi
+import com.example.ipfinderr.domain.search.IpFindApi
 import com.google.gson.Gson
 import org.koin.dsl.module
 import retrofit2.Retrofit

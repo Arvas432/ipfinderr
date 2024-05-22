@@ -1,7 +1,7 @@
 package com.example.ipfinderr.data.localstorage.impl
 import com.example.ipfinderr.data.localstorage.LocalIpStorageHandler
-import com.example.ipfinderr.domain.IpResult
-import com.example.ipfinderr.domain.SearchHistoryRepository
+import com.example.ipfinderr.domain.search.IpResult
+import com.example.ipfinderr.domain.search.SearchHistoryRepository
 
 
 class SearchHistoryRepositoryImpl(private val localTrackStorageHandler: LocalIpStorageHandler):

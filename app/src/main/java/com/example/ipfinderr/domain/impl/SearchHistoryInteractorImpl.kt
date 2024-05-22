@@ -1,8 +1,8 @@
 package com.example.ipfinderr.domain.impl
 
-import com.example.ipfinderr.domain.IpResult
-import com.example.ipfinderr.domain.SearchHistoryInteractor
-import com.example.ipfinderr.domain.SearchHistoryRepository
+import com.example.ipfinderr.domain.search.IpResult
+import com.example.ipfinderr.domain.search.SearchHistoryInteractor
+import com.example.ipfinderr.domain.search.SearchHistoryRepository
 
 class SearchHistoryInteractorImpl(private val repository: SearchHistoryRepository):
     SearchHistoryInteractor {

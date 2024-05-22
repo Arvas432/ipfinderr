@@ -1,6 +1,6 @@
 package com.example.ipfinderr.ui.searchHistory
 
-import com.example.ipfinderr.domain.IpResult
+import com.example.ipfinderr.domain.search.IpResult
 
 sealed class SearchHistoryState {
     object EmptyHistory: SearchHistoryState()

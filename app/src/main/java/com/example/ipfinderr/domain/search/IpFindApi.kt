@@ -1,6 +1,5 @@
-package com.example.ipfinderr.domain
+package com.example.ipfinderr.domain.search
 
-import com.example.ipfinderr.data.IPFindResponse
 import com.example.ipfinderr.data.dto.IpFindDto
 import retrofit2.Call
 import retrofit2.http.GET

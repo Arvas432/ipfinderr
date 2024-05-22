@@ -1,18 +1,17 @@
-package com.example.ipfinderr.ui.searchHistory
+package com.example.ipfinderr.ui.searchHistory.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import androidx.core.view.isVisible
-import com.example.ipfinderr.R
-import com.example.ipfinderr.databinding.ActivitySearchHistoryBinding
 import com.example.ipfinderr.databinding.FragmentSearchHistoryBinding
-import com.example.ipfinderr.domain.IpResult
+import com.example.ipfinderr.domain.search.IpResult
 import com.example.ipfinderr.ui.BindingFragment
+import com.example.ipfinderr.ui.searchHistory.SearchHistoryAdapter
+import com.example.ipfinderr.ui.searchHistory.SearchHistoryState
+import com.example.ipfinderr.ui.searchHistory.SearchHistoryViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchHistoryFragment : BindingFragment<FragmentSearchHistoryBinding>() {

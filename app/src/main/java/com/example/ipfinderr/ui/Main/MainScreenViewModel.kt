@@ -6,12 +6,12 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.ipfinderr.domain.IpInteractor
-import com.example.ipfinderr.domain.IpSearchResult
-import com.example.ipfinderr.domain.SearchHistoryInteractor
-import com.example.ipfinderr.domain.SearchResultType
+import com.example.ipfinderr.domain.search.IpInteractor
+import com.example.ipfinderr.domain.search.IpSearchResult
+import com.example.ipfinderr.domain.search.SearchHistoryInteractor
+import com.example.ipfinderr.domain.search.SearchResultType
 
-class MainActivityViewModel(private val ipInteractor: IpInteractor, private val searchHistoryInteractor: SearchHistoryInteractor): ViewModel() {
+class MainScreenViewModel(private val ipInteractor: IpInteractor, private val searchHistoryInteractor: SearchHistoryInteractor): ViewModel() {
     private var screenStateLiveData = MutableLiveData<MainState>(MainState.Default)
     private var searchData: String = SEARCH_DEF
     private var searchTextLiveData = MutableLiveData<String>(SEARCH_DEF)

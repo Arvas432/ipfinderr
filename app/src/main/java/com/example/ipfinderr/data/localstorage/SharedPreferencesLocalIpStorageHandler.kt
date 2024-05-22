@@ -1,7 +1,7 @@
 package com.example.ipfinderr.data.localstorage
 
 import android.content.SharedPreferences
-import com.example.ipfinderr.domain.IpResult
+import com.example.ipfinderr.domain.search.IpResult
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

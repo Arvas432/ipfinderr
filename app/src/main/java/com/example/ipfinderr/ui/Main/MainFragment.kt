@@ -1,21 +1,15 @@
 package com.example.ipfinderr.ui.Main
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.FrameLayout
-import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
@@ -23,20 +17,14 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.ipfinderr.R
-import com.example.ipfinderr.databinding.ActivityMainBinding
 import com.example.ipfinderr.databinding.FragmentMainBinding
-import com.example.ipfinderr.domain.IpResult
+import com.example.ipfinderr.domain.search.IpResult
 import com.example.ipfinderr.ui.BindingFragment
-import com.example.ipfinderr.ui.additionalData.AdditionalInfoActivity
-import com.example.ipfinderr.ui.map.MapActivity
-import com.example.ipfinderr.ui.map.MapsFragment
-import com.example.ipfinderr.ui.searchHistory.SearchHistoryActivity
-import com.example.ipfinderr.ui.settings.SettingsActivity
 import com.google.gson.Gson
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : BindingFragment<FragmentMainBinding>() {
-    private val viewModel by viewModel<MainActivityViewModel>()
+    private val viewModel by viewModel<MainScreenViewModel>()
     private lateinit var curIp: IpResult
     private lateinit var countryDataTv: TextView
 
@@ -45,6 +33,10 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
         container: ViewGroup?
     ): FragmentMainBinding {
         return FragmentMainBinding.inflate(inflater, container, false)
+    }
+
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+        return super.onCreateAnimation(transit, enter, nextAnim)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
