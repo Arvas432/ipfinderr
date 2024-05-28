@@ -1,9 +1,10 @@
 package com.example.ipfinderr.data
 
 import android.util.Log
-import com.example.ipfinderr.domain.IpResult
-import com.example.ipfinderr.data.dto.IpFindDto
-import com.example.ipfinderr.domain.IpRepository
+import com.example.ipfinderr.data.dto.IPFindRequest
+import com.example.ipfinderr.data.dto.IPFindResponse
+import com.example.ipfinderr.domain.search.IpResult
+import com.example.ipfinderr.domain.search.IpRepository
 
 class IpRepositoryImpl(private val networkClient: NetworkClient): IpRepository {
     override fun searchIp(expression: String): IpResult {
@@ -25,9 +26,9 @@ class IpRepositoryImpl(private val networkClient: NetworkClient): IpRepository {
                 resp.result.latitude?:"",
                 resp.result.longitude?:"",
                 resp.result.countryCode2?:"",
-                resp.result.district?:"",
+                resp.result.stateProv?:"",
                 resp.result.zipcode?: "",
-                resp.result.countryFlag?:"",
+                "https://flagsapi.com/${resp.result.countryCode2?:""}/flat/64.png",
                 resp.result.timeZone?.name?: "",
                 resp.result.currency?.name?: ""
             )

@@ -1,14 +1,15 @@
 package com.example.ipfinderr.domain.impl
 
-import com.example.ipfinderr.domain.IpInteractor
-import com.example.ipfinderr.domain.IpRepository
-import com.example.ipfinderr.domain.IpResult
-import com.example.ipfinderr.domain.IpSearchResult
-import com.example.ipfinderr.domain.SearchResultType
+import com.example.ipfinderr.domain.search.IpInteractor
+import com.example.ipfinderr.domain.search.IpRepository
+import com.example.ipfinderr.domain.search.IpResult
+import com.example.ipfinderr.domain.search.IpSearchResult
+import com.example.ipfinderr.domain.search.SearchResultType
 import java.util.concurrent.Executors
 
 class IpInteractorImpl(private val repository: IpRepository): IpInteractor {
     private val executor = Executors.newCachedThreadPool()
+    //хихи
     override fun searchIp(expression: String, consumer: IpInteractor.IpConsumer) {
         executor.execute {
             if(expression.isNotEmpty()){

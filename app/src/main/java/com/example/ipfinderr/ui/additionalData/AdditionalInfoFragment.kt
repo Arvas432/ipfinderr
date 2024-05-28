@@ -1,7 +1,6 @@
 package com.example.ipfinderr.ui.additionalData
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +9,9 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.FragmentAdditionalInfoBinding
-import com.example.ipfinderr.domain.IpResult
+import com.example.ipfinderr.domain.search.IpResult
 import com.example.ipfinderr.ui.BindingFragment
-import com.example.ipfinderr.ui.Main.MainFragment
+import com.example.ipfinderr.ui.Main.fragment.MainFragment
 import com.google.gson.Gson
 
 class AdditionalInfoFragment : BindingFragment<FragmentAdditionalInfoBinding>() {
@@ -27,7 +26,8 @@ class AdditionalInfoFragment : BindingFragment<FragmentAdditionalInfoBinding>() 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val ipInput = Gson().fromJson<IpResult>(requireArguments().getString(IP_RESULT_KEY),IpResult::class.java)
+        val ipInput = Gson().fromJson<IpResult>(requireArguments().getString(IP_RESULT_KEY),
+            IpResult::class.java)
         binding.backBtn.setOnClickListener {
             findNavController().navigateUp()
         }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="?attr/colorPrimary"
-    tools:context=".ui.searchHistory.SearchHistoryFragment">
+    tools:context=".ui.searchHistory.fragments.SearchHistoryFragment">
     <LinearLayout
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="parent"

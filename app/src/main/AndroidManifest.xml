@@ -23,29 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
-
-        <activity
-            android:name=".ui.map.MapActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.searchHistory.SearchHistoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.settings.SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.additionalData.AdditionalInfoActivity"
-            android:exported="false"
-            android:label="@string/title_activity_additional_info"
-            android:theme="@style/Theme.Ipfinderr" />
-        <activity
-            android:name=".ui.Main.MainActivity"
-            android:exported="true">
-
-        </activity>
     </application>
 
 </manifest>

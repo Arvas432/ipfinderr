@@ -1,6 +1,9 @@
 package com.example.ipfinderr.data
 import android.util.Log
-import com.example.ipfinderr.domain.IpFindApi
+import com.example.ipfinderr.data.dto.IPFindRequest
+import com.example.ipfinderr.data.dto.IPFindResponse
+import com.example.ipfinderr.data.dto.Response
+import com.example.ipfinderr.domain.search.IpFindApi
 
 class RetrofitNetworkClient(private val ipFindService: IpFindApi): NetworkClient {
 

@@ -14,4 +14,5 @@
     <color name="main_blue">#3B9EBF</color>
     <color name="darkest_gray">#48494B</color>
     <color name="yp_yellow">#FCD452</color>
+    <color name="big_button_color">@color/light_gray_mine</color>
 </resources>

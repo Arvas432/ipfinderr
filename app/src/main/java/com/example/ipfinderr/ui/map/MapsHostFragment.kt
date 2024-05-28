@@ -1,5 +1,7 @@
 package com.example.ipfinderr.ui.map
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +11,11 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.ipfinderr.R
 import com.example.ipfinderr.databinding.FragmentMapsHostBinding
-import com.example.ipfinderr.domain.IpResult
+import com.example.ipfinderr.domain.search.IpResult
 import com.example.ipfinderr.ui.BindingFragment
-import com.example.ipfinderr.ui.Main.MainFragment
+import com.example.ipfinderr.ui.Main.fragment.MainFragment
 import com.google.gson.Gson
+
 
 class MapsHostFragment : BindingFragment<FragmentMapsHostBinding>(){
     override fun createBinding(
@@ -42,6 +45,15 @@ class MapsHostFragment : BindingFragment<FragmentMapsHostBinding>(){
         }
         binding.backBtn.setOnClickListener {
             findNavController().navigateUp()
+        }
+        binding.mapButton.setOnClickListener {
+            val gmmIntentUri = Uri.parse("geo:${ipInput.latitude},${ipInput.longitude}?q=${ipInput.zipcode}")
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.setPackage("com.google.android.apps.maps")
+            mapIntent.resolveActivity(requireActivity().packageManager)?.let {
+                startActivity(mapIntent)
+            }
+
         }
     }
     companion object {
