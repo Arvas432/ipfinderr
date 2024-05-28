@@ -53,6 +53,8 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
             renderState(it)
         }
         binding.flag.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        binding.networkErrorView.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        binding.noResultsView.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         if(curIp.ip!=""){
             setContentScreenState(curIp)
         }
@@ -95,6 +97,7 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
             }
             viewModel.setSearchData("")
             binding.searchFieldEt.setText("")
+            setDefaultScreenState()
         }
         binding.searchFieldEt.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -105,6 +108,7 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
     }
     private fun setContentScreenState(ipResult: IpResult) {
         curIp = ipResult
+        binding.flag.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         binding.flag.animate()
         binding.networkErrorView.isVisible = false
         binding.noResultsView.isVisible = false
@@ -125,12 +129,16 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
     private fun setEmptyResultsScreenState() {
         binding.progressBar.isVisible = false
         binding.networkErrorView.isVisible = false
+        binding.noResultsView.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        binding.noResultsView.animate()
         binding.noResultsView.isVisible = true
     }
 
     private fun setNetworkErrorScreenState() {
         binding.progressBar.isVisible = false
         binding.networkErrorView.isVisible = true
+        binding.networkErrorView.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        binding.networkErrorView.animate()
         binding.noResultsView.isVisible = false
     }
 
@@ -156,7 +164,6 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
         }
 
     }
-//хаха
     override fun onDestroy() {
         super.onDestroy()
         viewModel.onDestroy()
