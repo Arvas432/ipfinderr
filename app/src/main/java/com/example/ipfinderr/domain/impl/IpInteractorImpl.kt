@@ -9,6 +9,7 @@ import java.util.concurrent.Executors
 
 class IpInteractorImpl(private val repository: IpRepository): IpInteractor {
     private val executor = Executors.newCachedThreadPool()
+    //хихи
     override fun searchIp(expression: String, consumer: IpInteractor.IpConsumer) {
         executor.execute {
             if(expression.isNotEmpty()){
